@@ -1,1 +1,886 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Arte de Esculpir o Rosto | Método Coreano de Yoga Facial</title>
+    <meta name="description" content="Redescubra a juventude do seu rosto de forma natural. Método inspirado em técnicas coreanas de yoga facial e automassagem.">
+    
+    <!-- SEO Básico -->
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="A Arte de Esculpir o Rosto | Método Natural">
+    <meta property="og:description" content="Reduza flacidez e papada com apenas 10 minutos por dia. Método 100% natural.">
+    <meta property="og:type" content="website">
 
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Tailwind Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        nude: {
+                            50: '#FDFBF7',
+                            100: '#F7F3EB',
+                            200: '#EBE0D0',
+                            300: '#DFCCB4',
+                            800: '#4A3B32',
+                            900: '#2C221C',
+                        },
+                        rose: {
+                            light: '#F8E8E8',
+                            DEFAULT: '#C48B8B',
+                            dark: '#9A6B6B',
+                        },
+                        gold: {
+                            light: '#F4E8D4',
+                            DEFAULT: '#D4A373',
+                            dark: '#B0855A',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Montserrat', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    boxShadow: {
+                        'premium': '0 10px 40px -10px rgba(196, 139, 139, 0.15)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Smooth Scrolling */
+        html { scroll-behavior: smooth; }
+        
+        /* Custom Animations */
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-up {
+            animation: fadeUp 0.8s ease-out forwards;
+        }
+        
+        /* FAQ Accordion Transitions */
+        .faq-answer {
+            transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out, padding 0.3s ease-in-out;
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+        }
+        .faq-answer.open {
+            max-height: 500px;
+            opacity: 1;
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+        }
+        .faq-icon {
+            transition: transform 0.3s ease;
+        }
+        .faq-button.open .faq-icon {
+            transform: rotate(180deg);
+        }
+
+        /* Glassmorphism for floating elements */
+        .glass {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+    </style>
+</head>
+<body class="font-sans text-nude-900 bg-nude-50 antialiased selection:bg-rose-light selection:text-nude-900">
+
+    <!-- ================= HERO SECTION ================= -->
+    <header class="relative overflow-hidden bg-gradient-to-br from-[#FAF7F5] via-[#FDFBF7] to-[#F4E8D4]/40 pt-20 pb-24 lg:pt-28 lg:pb-32">
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+                
+                <!-- Text Content -->
+                <div class="w-full lg:w-1/2 text-center lg:text-left animate-fade-up">
+                    <div class="flex flex-col sm:flex-row items-center gap-4 justify-center lg:justify-start mb-6">
+                        <span class="inline-block py-1.5 px-4 rounded-full bg-white border border-rose-light text-rose-dark font-medium text-xs tracking-widest uppercase shadow-sm">
+                            Método Exclusivo
+                        </span>
+                        <div class="flex items-center gap-1.5 text-xs font-semibold text-nude-800">
+                            <div class="flex text-gold">
+                                <i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i>
+                                <i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i>
+                                <i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i>
+                                <i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i>
+                                <i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i>
+                            </div>
+                            <span>+2.000 Alunas</span>
+                        </div>
+                    </div>
+                    
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-nude-900 leading-[1.15] mb-6">
+                        Redescubra a <span class="text-rose relative inline-block">Juventude<svg class="absolute w-full h-3 -bottom-1 left-0 text-rose-light/60 -z-10" viewBox="0 0 100 20" preserveAspectRatio="none"><path d="M0,10 Q50,20 100,10" stroke="currentColor" stroke-width="8" fill="none"/></svg></span> do Seu Rosto de Forma 100% Natural
+                    </h1>
+                    
+                    <p class="text-lg md:text-xl text-nude-800 font-light mb-10 leading-relaxed max-w-2xl mx-auto lg:mx-0">
+                        Um método comprovado inspirado nos segredos coreanos para levantar, tonificar e esculpir seu rosto com <strong>apenas 10 minutos diários.</strong> Sem agulhas, sem dor e no conforto do seu lar.
+                    </p>
+                    
+                    <div class="flex flex-col sm:flex-row items-center gap-5 justify-center lg:justify-start mb-8">
+                        <a href="#oferta" class="w-full sm:w-auto px-10 py-4 bg-nude-900 text-white rounded-full font-semibold text-lg shadow-xl shadow-nude-900/20 hover:bg-rose transition-colors duration-300 transform hover:-translate-y-0.5 text-center flex items-center justify-center gap-2">
+                            Quero Esculpir Meu Rosto <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                        </a>
+                        <div class="text-center sm:text-left">
+                            <span class="block text-2xl font-serif font-bold text-rose leading-none mb-1">R$ 37,00</span>
+                            <span class="text-xs text-nude-500 uppercase tracking-wider font-semibold">Pagamento Único</span>
+                        </div>
+                    </div>
+                    
+                    <div class="flex flex-wrap items-center justify-center lg:justify-start gap-6 text-sm text-nude-800 font-medium">
+                        <div class="flex items-center gap-2">
+                            <i data-lucide="check-circle-2" class="w-5 h-5 text-gold-dark"></i>
+                            <span>Acesso Imediato</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i data-lucide="shield-check" class="w-5 h-5 text-gold-dark"></i>
+                            <span>Compra Segura Kiwify</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Image/Cover Content -->
+                <div class="w-full lg:w-1/2 relative animate-fade-up mt-8 lg:mt-0" style="animation-delay: 0.2s;">
+                    <div class="relative w-full max-w-[400px] mx-auto aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl border-[8px] border-white group bg-white">
+                        <!-- Placeholder for the Ebook Cover - Using a beautiful sophisticated image -->
+                        <img src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?auto=format&fit=crop&w=800&q=80" alt="Mulher com pele perfeita fazendo massagem facial" class="w-full h-full object-cover transform transition-transform duration-1000 group-hover:scale-105">
+                        
+                        <!-- Clean Editorial Overlay -->
+                        <div class="absolute bottom-0 left-0 w-full bg-white/95 backdrop-blur-md p-6 text-center border-t border-nude-100/50">
+                            <span class="text-gold-dark text-xs font-bold tracking-widest uppercase mb-2 block">E-book Premium</span>
+                            <h3 class="text-nude-900 font-serif text-2xl md:text-3xl font-bold leading-tight">A Arte de Esculpir o Rosto</h3>
+                        </div>
+                    </div>
+                    
+                    <!-- Decorative Element -->
+                    <div class="absolute -z-10 -bottom-6 -right-6 w-32 h-32 bg-gold-light/40 rounded-full blur-2xl"></div>
+                </div>
+
+            </div>
+        </div>
+    </header>
+
+    <!-- ================= PAIN POINTS SECTION ================= -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-6 max-w-4xl">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-serif font-bold text-nude-900 mb-4">
+                    Você se olha no espelho e sente que...
+                </h2>
+                <div class="w-24 h-1 bg-rose mx-auto rounded-full"></div>
+            </div>
+
+            <div class="space-y-4">
+                <div class="flex items-start gap-4 p-6 rounded-2xl bg-nude-50 border border-nude-100 hover:shadow-md transition-shadow">
+                    <div class="flex-shrink-0 mt-1">
+                        <div class="w-8 h-8 rounded-full bg-rose-light flex items-center justify-center">
+                            <i data-lucide="x" class="w-5 h-5 text-rose"></i>
+                        </div>
+                    </div>
+                    <p class="text-lg text-nude-800 leading-relaxed">
+                        A <strong class="text-nude-900">flacidez facial</strong> está apagando os contornos naturais do seu rosto, fazendo você parecer mais cansada do que realmente está?
+                    </p>
+                </div>
+
+                <div class="flex items-start gap-4 p-6 rounded-2xl bg-nude-50 border border-nude-100 hover:shadow-md transition-shadow">
+                    <div class="flex-shrink-0 mt-1">
+                        <div class="w-8 h-8 rounded-full bg-rose-light flex items-center justify-center">
+                            <i data-lucide="x" class="w-5 h-5 text-rose"></i>
+                        </div>
+                    </div>
+                    <p class="text-lg text-nude-800 leading-relaxed">
+                        A indesejada <strong class="text-nude-900">papada</strong> tem afetado sua autoestima nas fotos e no dia a dia?
+                    </p>
+                </div>
+
+                <div class="flex items-start gap-4 p-6 rounded-2xl bg-nude-50 border border-nude-100 hover:shadow-md transition-shadow">
+                    <div class="flex-shrink-0 mt-1">
+                        <div class="w-8 h-8 rounded-full bg-rose-light flex items-center justify-center">
+                            <i data-lucide="x" class="w-5 h-5 text-rose"></i>
+                        </div>
+                    </div>
+                    <p class="text-lg text-nude-800 leading-relaxed">
+                        As <strong class="text-nude-900">rugas e linhas finas</strong> estão se aprofundando, e você teme o envelhecimento precoce sem saber como freá-lo de forma natural?
+                    </p>
+                </div>
+
+                <div class="flex items-start gap-4 p-6 rounded-2xl bg-nude-50 border border-nude-100 hover:shadow-md transition-shadow">
+                    <div class="flex-shrink-0 mt-1">
+                        <div class="w-8 h-8 rounded-full bg-rose-light flex items-center justify-center">
+                            <i data-lucide="x" class="w-5 h-5 text-rose"></i>
+                        </div>
+                    </div>
+                    <p class="text-lg text-nude-800 leading-relaxed">
+                        Você <strong class="text-nude-900">não tem tempo ou disposição</strong> para rotinas de skincare complexas ou medo de procedimentos estéticos invasivos e artificiais?
+                    </p>
+                </div>
+            </div>
+
+            <div class="text-center mt-12">
+                <p class="text-xl font-serif text-rose font-medium">Se você respondeu "sim" para alguma dessas perguntas, continue lendo. Existe um caminho mais gentil e eficaz.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= SOLUTION PRESENTATION ================= -->
+    <section class="py-20 bg-[#F7F3EB]">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col-reverse lg:flex-row items-center gap-12 lg:gap-20">
+                
+                <div class="w-full lg:w-1/2">
+                    <img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=800&q=80" alt="Mulher sorrindo com pele radiante" class="rounded-2xl shadow-premium w-full object-cover aspect-square md:aspect-video lg:aspect-square">
+                </div>
+
+                <div class="w-full lg:w-1/2">
+                    <h2 class="text-3xl md:text-4xl font-serif font-bold text-nude-900 mb-6">
+                        O Segredo do <span class="text-rose">Natural Face Sculpting</span>
+                    </h2>
+                    <p class="text-nude-800 mb-6 leading-relaxed">
+                        Assim como exercitamos o nosso corpo para mantê-lo firme, os mais de 40 músculos do nosso rosto também precisam de estímulo. Quando negligenciados, a gravidade e o tempo cobram seu preço.
+                    </p>
+                    <p class="text-nude-800 mb-8 leading-relaxed">
+                        Inspirado na sabedoria milenar asiática e nas rotinas de beleza das mulheres coreanas, o e-book <strong>A Arte de Esculpir o Rosto</strong> revela um passo a passo simples. Você aprenderá a ativar a circulação, drenar toxinas e fortalecer a musculatura facial com as próprias mãos.
+                    </p>
+                    
+                    <ul class="space-y-4">
+                        <li class="flex items-center gap-3 text-nude-900 font-medium">
+                            <i data-lucide="check-circle-2" class="w-5 h-5 text-gold"></i>
+                            Técnicas de automassagem e drenagem linfática.
+                        </li>
+                        <li class="flex items-center gap-3 text-nude-900 font-medium">
+                            <i data-lucide="check-circle-2" class="w-5 h-5 text-gold"></i>
+                            Exercícios focados em lifting natural.
+                        </li>
+                        <li class="flex items-center gap-3 text-nude-900 font-medium">
+                            <i data-lucide="check-circle-2" class="w-5 h-5 text-gold"></i>
+                            Relaxamento de tensões que causam rugas.
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= BENEFITS SECTION ================= -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16 max-w-3xl mx-auto">
+                <h2 class="text-3xl md:text-4xl font-serif font-bold text-nude-900 mb-4">
+                    Transformação Real, de Dentro para Fora
+                </h2>
+                <p class="text-nude-800">Veja o que apenas 10 minutos de dedicação diária podem fazer pela sua beleza natural.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Benefit 1 -->
+                <div class="bg-nude-50 rounded-2xl p-8 border border-nude-100 hover:-translate-y-2 transition-transform duration-300">
+                    <div class="w-14 h-14 bg-rose-light rounded-xl flex items-center justify-center mb-6">
+                        <i data-lucide="scan-face" class="w-7 h-7 text-rose"></i>
+                    </div>
+                    <h3 class="text-xl font-serif font-bold text-nude-900 mb-3">Rosto Mais Definido</h3>
+                    <p class="text-nude-800 text-sm leading-relaxed">Esculpa as maçãs do rosto e a linha da mandíbula, resgatando os contornos naturais da sua juventude.</p>
+                </div>
+
+                <!-- Benefit 2 -->
+                <div class="bg-nude-50 rounded-2xl p-8 border border-nude-100 hover:-translate-y-2 transition-transform duration-300">
+                    <div class="w-14 h-14 bg-rose-light rounded-xl flex items-center justify-center mb-6">
+                        <i data-lucide="sun" class="w-7 h-7 text-rose"></i>
+                    </div>
+                    <h3 class="text-xl font-serif font-bold text-nude-900 mb-3">Aparência Iluminada</h3>
+                    <p class="text-nude-800 text-sm leading-relaxed">A massagem estimula a oxigenação celular, promovendo um brilho saudável e uma textura de pele radiante.</p>
+                </div>
+
+                <!-- Benefit 3 -->
+                <div class="bg-nude-50 rounded-2xl p-8 border border-nude-100 hover:-translate-y-2 transition-transform duration-300">
+                    <div class="w-14 h-14 bg-rose-light rounded-xl flex items-center justify-center mb-6">
+                        <i data-lucide="droplets" class="w-7 h-7 text-rose"></i>
+                    </div>
+                    <h3 class="text-xl font-serif font-bold text-nude-900 mb-3">Melhora da Circulação</h3>
+                    <p class="text-nude-800 text-sm leading-relaxed">A drenagem linfática facial reduz o inchaço matinal e elimina toxinas acumuladas sob a pele.</p>
+                </div>
+
+                <!-- Benefit 4 -->
+                <div class="bg-nude-50 rounded-2xl p-8 border border-nude-100 hover:-translate-y-2 transition-transform duration-300">
+                    <div class="w-14 h-14 bg-rose-light rounded-xl flex items-center justify-center mb-6">
+                        <i data-lucide="scissors" class="w-7 h-7 text-rose"></i>
+                    </div>
+                    <h3 class="text-xl font-serif font-bold text-nude-900 mb-3">Redução da Papada</h3>
+                    <p class="text-nude-800 text-sm leading-relaxed">Exercícios direcionados para fortalecer o pescoço e a base do queixo, diminuindo visivelmente a flacidez.</p>
+                </div>
+
+                <!-- Benefit 5 -->
+                <div class="bg-nude-50 rounded-2xl p-8 border border-nude-100 hover:-translate-y-2 transition-transform duration-300">
+                    <div class="w-14 h-14 bg-rose-light rounded-xl flex items-center justify-center mb-6">
+                        <i data-lucide="clock" class="w-7 h-7 text-rose"></i>
+                    </div>
+                    <h3 class="text-xl font-serif font-bold text-nude-900 mb-3">Apenas 10 Minutos</h3>
+                    <p class="text-nude-800 text-sm leading-relaxed">Uma rotina prática que se encaixa na sua manhã agitada ou no seu momento de relaxamento noturno.</p>
+                </div>
+
+                <!-- Benefit 6 -->
+                <div class="bg-nude-50 rounded-2xl p-8 border border-nude-100 hover:-translate-y-2 transition-transform duration-300">
+                    <div class="w-14 h-14 bg-rose-light rounded-xl flex items-center justify-center mb-6">
+                        <i data-lucide="leaf" class="w-7 h-7 text-rose"></i>
+                    </div>
+                    <h3 class="text-xl font-serif font-bold text-nude-900 mb-3">100% Natural</h3>
+                    <p class="text-nude-800 text-sm leading-relaxed">Conquiste a melhor versão do seu rosto sem intervenções, sem agulhas e preservando suas feições únicas.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= WHAT YOU WILL LEARN ================= -->
+    <section class="py-20 bg-[#FAF7F5]">
+        <div class="container mx-auto px-6 max-w-5xl">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-serif font-bold text-nude-900 mb-4">
+                    O Que Você Vai Aprender no Ebook
+                </h2>
+                <div class="w-24 h-1 bg-rose mx-auto rounded-full"></div>
+            </div>
+
+            <div class="space-y-6">
+                <!-- Module 1 -->
+                <div class="bg-white p-6 md:p-8 rounded-2xl shadow-sm flex flex-col md:flex-row gap-6 items-start">
+                    <div class="w-16 h-16 bg-gold-light rounded-full flex items-center justify-center flex-shrink-0">
+                        <span class="font-serif font-bold text-2xl text-gold-dark">01</span>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-serif font-bold text-nude-900 mb-2">Fundamentos da Estética Natural</h3>
+                        <p class="text-nude-800 leading-relaxed text-sm md:text-base">Entenda a anatomia do seu rosto, como os músculos perdem a firmeza e prepare sua pele para receber os estímulos corretos (com óleos faciais e postura adequada).</p>
+                    </div>
+                </div>
+
+                <!-- Module 2 -->
+                <div class="bg-white p-6 md:p-8 rounded-2xl shadow-sm flex flex-col md:flex-row gap-6 items-start">
+                    <div class="w-16 h-16 bg-gold-light rounded-full flex items-center justify-center flex-shrink-0">
+                        <span class="font-serif font-bold text-2xl text-gold-dark">02</span>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-serif font-bold text-nude-900 mb-2">Protocolo de Drenagem Linfática Coreana</h3>
+                        <p class="text-nude-800 leading-relaxed text-sm md:text-base">O passo a passo para o "efeito desinchaço" imediato. Aprenda os pontos de pressão corretos para liberar toxinas e definir contornos logo pela manhã.</p>
+                    </div>
+                </div>
+
+                <!-- Module 3 -->
+                <div class="bg-white p-6 md:p-8 rounded-2xl shadow-sm flex flex-col md:flex-row gap-6 items-start">
+                    <div class="w-16 h-16 bg-gold-light rounded-full flex items-center justify-center flex-shrink-0">
+                        <span class="font-serif font-bold text-2xl text-gold-dark">03</span>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-serif font-bold text-nude-900 mb-2">Esculpindo Mandíbula e Reduzindo Papada</h3>
+                        <p class="text-nude-800 leading-relaxed text-sm md:text-base">Exercícios isolados de alta eficácia para a região inferior do rosto, fortalecendo a base do queixo e recuperando o ângulo de jovialidade do pescoço.</p>
+                    </div>
+                </div>
+
+                <!-- Module 4 -->
+                <div class="bg-white p-6 md:p-8 rounded-2xl shadow-sm flex flex-col md:flex-row gap-6 items-start">
+                    <div class="w-16 h-16 bg-gold-light rounded-full flex items-center justify-center flex-shrink-0">
+                        <span class="font-serif font-bold text-2xl text-gold-dark">04</span>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-serif font-bold text-nude-900 mb-2">Lifting de Olhos e Suavização de Rugas</h3>
+                        <p class="text-nude-800 leading-relaxed text-sm md:text-base">Técnicas de alongamento e tonificação para levantar o olhar, minimizar os "pés de galinha" e suavizar o temido bigode chinês sem expressões artificiais.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= METHOD DIFFERENTIATORS ================= -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-6 max-w-4xl">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-serif font-bold text-nude-900 mb-4">
+                    Por que escolher a Beleza Natural?
+                </h2>
+            </div>
+
+            <div class="flex flex-col md:flex-row rounded-2xl overflow-hidden shadow-premium border border-nude-100">
+                <!-- Traditional Procedures -->
+                <div class="w-full md:w-1/2 bg-nude-50 p-8 md:p-10">
+                    <h3 class="text-xl font-serif font-bold text-nude-900 mb-6 flex items-center gap-2">
+                        <i data-lucide="syringe" class="w-5 h-5 text-nude-400"></i>
+                        Procedimentos Estéticos
+                    </h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-3 text-nude-800 text-sm">
+                            <i data-lucide="x" class="w-5 h-5 text-red-400 flex-shrink-0"></i>
+                            Altíssimo custo (milhares de reais).
+                        </li>
+                        <li class="flex items-start gap-3 text-nude-800 text-sm">
+                            <i data-lucide="x" class="w-5 h-5 text-red-400 flex-shrink-0"></i>
+                            Resultados temporários (necessitam manutenção cara).
+                        </li>
+                        <li class="flex items-start gap-3 text-nude-800 text-sm">
+                            <i data-lucide="x" class="w-5 h-5 text-red-400 flex-shrink-0"></i>
+                            Riscos de assimetria e aparência artificial.
+                        </li>
+                        <li class="flex items-start gap-3 text-nude-800 text-sm">
+                            <i data-lucide="x" class="w-5 h-5 text-red-400 flex-shrink-0"></i>
+                            Processos invasivos e dolorosos.
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Natural Method -->
+                <div class="w-full md:w-1/2 bg-rose text-white p-8 md:p-10">
+                    <h3 class="text-xl font-serif font-bold mb-6 flex items-center gap-2">
+                        <i data-lucide="heart-handshake" class="w-5 h-5 text-rose-light"></i>
+                        Nosso Método
+                    </h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-3 text-white text-sm">
+                            <i data-lucide="check" class="w-5 h-5 text-gold-light flex-shrink-0"></i>
+                            Investimento único e extremamente acessível (R$37).
+                        </li>
+                        <li class="flex items-start gap-3 text-white text-sm">
+                            <i data-lucide="check" class="w-5 h-5 text-gold-light flex-shrink-0"></i>
+                            Resultados duradouros construídos pela memória muscular.
+                        </li>
+                        <li class="flex items-start gap-3 text-white text-sm">
+                            <i data-lucide="check" class="w-5 h-5 text-gold-light flex-shrink-0"></i>
+                            Beleza autêntica, respeitando seus traços.
+                        </li>
+                        <li class="flex items-start gap-3 text-white text-sm">
+                            <i data-lucide="check" class="w-5 h-5 text-gold-light flex-shrink-0"></i>
+                            Momento de autocuidado, relaxamento e bem-estar.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= BONUSES SECTION ================= -->
+    <section class="py-20 bg-[#FDFBF7]">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16 max-w-3xl mx-auto">
+                <span class="text-rose font-bold uppercase tracking-widest text-sm mb-2 block">Presentes Exclusivos</span>
+                <h2 class="text-3xl md:text-4xl font-serif font-bold text-nude-900 mb-4">
+                    Garantindo hoje, você recebe 3 Bônus Especiais
+                </h2>
+                <p class="text-nude-800">Preparamos materiais complementares para acelerar seus resultados.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <!-- Bonus 1 -->
+                <div class="bg-white rounded-2xl p-8 border-2 border-gold/20 relative overflow-hidden group hover:border-gold transition-colors">
+                    <div class="absolute top-0 right-0 bg-gold text-white text-xs font-bold px-3 py-1 rounded-bl-lg">BÔNUS 01</div>
+                    <div class="w-12 h-12 bg-gold-light/50 rounded-lg flex items-center justify-center mb-6">
+                        <i data-lucide="calendar" class="w-6 h-6 text-gold-dark"></i>
+                    </div>
+                    <h3 class="text-xl font-serif font-bold text-nude-900 mb-2">Plano Facial de 21 Dias</h3>
+                    <p class="text-nude-800 text-sm mb-4">Um cronograma diário exato do que fazer em cada dia nas primeiras 3 semanas para criar o hábito e ver os primeiros resultados rapidamente.</p>
+                    <div class="mt-auto pt-4 border-t border-nude-100">
+                        <span class="text-xs text-nude-400 line-through">Vendido por R$ 47,00</span>
+                        <span class="block text-rose font-bold mt-1">Hoje: GRÁTIS</span>
+                    </div>
+                </div>
+
+                <!-- Bonus 2 -->
+                <div class="bg-white rounded-2xl p-8 border-2 border-gold/20 relative overflow-hidden group hover:border-gold transition-colors">
+                    <div class="absolute top-0 right-0 bg-gold text-white text-xs font-bold px-3 py-1 rounded-bl-lg">BÔNUS 02</div>
+                    <div class="w-12 h-12 bg-gold-light/50 rounded-lg flex items-center justify-center mb-6">
+                        <i data-lucide="check-square" class="w-6 h-6 text-gold-dark"></i>
+                    </div>
+                    <h3 class="text-xl font-serif font-bold text-nude-900 mb-2">Checklist Diário</h3>
+                    <p class="text-nude-800 text-sm mb-4">Um PDF lindamente desenhado para você imprimir e marcar seus exercícios diários, mantendo a constância e a motivação em alta.</p>
+                    <div class="mt-auto pt-4 border-t border-nude-100">
+                        <span class="text-xs text-nude-400 line-through">Vendido por R$ 27,00</span>
+                        <span class="block text-rose font-bold mt-1">Hoje: GRÁTIS</span>
+                    </div>
+                </div>
+
+                <!-- Bonus 3 -->
+                <div class="bg-white rounded-2xl p-8 border-2 border-gold/20 relative overflow-hidden group hover:border-gold transition-colors">
+                    <div class="absolute top-0 right-0 bg-gold text-white text-xs font-bold px-3 py-1 rounded-bl-lg">BÔNUS 03</div>
+                    <div class="w-12 h-12 bg-gold-light/50 rounded-lg flex items-center justify-center mb-6">
+                        <i data-lucide="flower-2" class="w-6 h-6 text-gold-dark"></i>
+                    </div>
+                    <h3 class="text-xl font-serif font-bold text-nude-900 mb-2">Guia de Ferramentas</h3>
+                    <p class="text-nude-800 text-sm mb-4">Aprenda a integrar ferramentas acessíveis como o Gua Sha e o Rolo de Jade à sua rotina para potencializar o efeito lifting das massagens.</p>
+                    <div class="mt-auto pt-4 border-t border-nude-100">
+                        <span class="text-xs text-nude-400 line-through">Vendido por R$ 67,00</span>
+                        <span class="block text-rose font-bold mt-1">Hoje: GRÁTIS</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= SOCIAL PROOF / DEPOIMENTOS ================= -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-6 max-w-6xl">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-serif font-bold text-nude-900 mb-4">
+                    Mulheres que já transformaram seus rostos
+                </h2>
+                <div class="w-24 h-1 bg-rose mx-auto rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-[#FAF7F5] p-8 rounded-2xl relative">
+                    <i data-lucide="quote" class="absolute top-6 right-6 w-8 h-8 text-rose-light opacity-50"></i>
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="w-12 h-12 bg-nude-200 rounded-full flex items-center justify-center text-nude-500 font-serif font-bold text-xl">M</div>
+                        <div>
+                            <h4 class="font-bold text-nude-900">Mariana S., 42 anos</h4>
+                            <div class="flex text-gold text-sm">
+                                <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-nude-800 text-sm italic leading-relaxed">"Sempre tive muito inchaço no rosto ao acordar e percebi que o contorno da minha mandíbula estava sumindo. Em 15 dias aplicando os exercícios do ebook, a diferença no espelho é gritante. Minhas amigas até perguntaram o que eu fiz na pele!"</p>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="bg-[#FAF7F5] p-8 rounded-2xl relative">
+                    <i data-lucide="quote" class="absolute top-6 right-6 w-8 h-8 text-rose-light opacity-50"></i>
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="w-12 h-12 bg-nude-200 rounded-full flex items-center justify-center text-nude-500 font-serif font-bold text-xl">E</div>
+                        <div>
+                            <h4 class="font-bold text-nude-900">Elena R., 55 anos</h4>
+                            <div class="flex text-gold text-sm">
+                                <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-nude-800 text-sm italic leading-relaxed">"Eu tinha pavor de procedimentos estéticos. Comprei o ebook sem muita expectativa, mas o momento da massagem virou meu ritual sagrado. O bigode chinês suavizou muito e a papada diminuiu incrivelmente. Recomendo para todas."</p>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="bg-[#FAF7F5] p-8 rounded-2xl relative">
+                    <i data-lucide="quote" class="absolute top-6 right-6 w-8 h-8 text-rose-light opacity-50"></i>
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="w-12 h-12 bg-nude-200 rounded-full flex items-center justify-center text-nude-500 font-serif font-bold text-xl">C</div>
+                        <div>
+                            <h4 class="font-bold text-nude-900">Carolina T., 38 anos</h4>
+                            <div class="flex text-gold text-sm">
+                                <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-nude-800 text-sm italic leading-relaxed">"As técnicas de drenagem são um milagre. O formato do meu rosto está muito mais definido, estilo as atrizes coreanas mesmo. O melhor é que só levo 10 minutinhos depois do banho. Muito prático e o material é super bem explicado."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= OFFER & PRICING ================= -->
+    <section id="oferta" class="py-20 bg-rose-light/20 relative">
+        <div class="container mx-auto px-6">
+            <div class="max-w-3xl mx-auto bg-white rounded-3xl shadow-premium border-2 border-rose-light overflow-hidden">
+                
+                <div class="bg-rose text-white text-center py-4">
+                    <span class="font-bold uppercase tracking-widest text-sm">Oferta de Lançamento por Tempo Limitado</span>
+                </div>
+
+                <div class="p-8 md:p-12">
+                    <h2 class="text-2xl md:text-3xl font-serif font-bold text-center text-nude-900 mb-8">
+                        Tudo que você irá receber hoje:
+                    </h2>
+
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-center justify-between border-b border-nude-100 pb-3">
+                            <div class="flex items-center gap-3">
+                                <i data-lucide="check" class="w-5 h-5 text-rose"></i>
+                                <span class="font-medium text-nude-800">Ebook: A Arte de Esculpir o Rosto</span>
+                            </div>
+                            <span class="text-nude-400 line-through text-sm">R$ 97,00</span>
+                        </li>
+                        <li class="flex items-center justify-between border-b border-nude-100 pb-3">
+                            <div class="flex items-center gap-3">
+                                <i data-lucide="gift" class="w-5 h-5 text-gold"></i>
+                                <span class="font-medium text-nude-800">Bônus: Plano Facial de 21 Dias</span>
+                            </div>
+                            <span class="text-nude-400 line-through text-sm">R$ 47,00</span>
+                        </li>
+                        <li class="flex items-center justify-between border-b border-nude-100 pb-3">
+                            <div class="flex items-center gap-3">
+                                <i data-lucide="gift" class="w-5 h-5 text-gold"></i>
+                                <span class="font-medium text-nude-800">Bônus: Checklist Diário PDF</span>
+                            </div>
+                            <span class="text-nude-400 line-through text-sm">R$ 27,00</span>
+                        </li>
+                        <li class="flex items-center justify-between pb-3">
+                            <div class="flex items-center gap-3">
+                                <i data-lucide="gift" class="w-5 h-5 text-gold"></i>
+                                <span class="font-medium text-nude-800">Bônus: Guia de Ferramentas (Gua Sha)</span>
+                            </div>
+                            <span class="text-nude-400 line-through text-sm">R$ 67,00</span>
+                        </li>
+                    </ul>
+
+                    <div class="bg-[#FAF7F5] rounded-xl p-6 text-center mb-8">
+                        <p class="text-nude-800 text-sm mb-2">Valor total dos materiais: <span class="line-through">R$ 238,00</span></p>
+                        <p class="text-nude-900 font-medium mb-1">Hoje, tudo isso é seu por apenas:</p>
+                        <div class="text-5xl font-serif font-bold text-rose mb-2">R$ 37,00</div>
+                        <p class="text-sm text-nude-500">Pagamento único. Acesso vitalício.</p>
+                    </div>
+
+                    <!-- SUBSTITUIR ESTE LINK PELO LINK DE CHECKOUT DA KIWIFY -->
+                    <a href="https://pay.kiwify.com.br/SEU_LINK_AQUI" class="block w-full py-5 bg-rose text-white text-center rounded-xl font-bold text-xl shadow-lg shadow-rose/30 hover:bg-rose-dark transition-all transform hover:-translate-y-1 mb-4">
+                        Comprar Agora por R$ 37,00
+                    </a>
+                    
+                    <div class="flex items-center justify-center gap-4 opacity-70">
+                        <img src="https://logospng.org/download/kiwify/logo-kiwify-1024.png" alt="Kiwify" class="h-4 grayscale" onerror="this.style.display='none'">
+                        <span class="text-xs text-nude-500 font-medium flex items-center gap-1"><i data-lucide="lock" class="w-3 h-3"></i> Pagamento 100% Seguro</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= GUARANTEE ================= -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-6 max-w-4xl">
+            <div class="flex flex-col md:flex-row items-center gap-8 bg-nude-50 rounded-3xl p-8 md:p-12 border border-nude-100">
+                <div class="w-24 h-24 flex-shrink-0">
+                    <div class="w-full h-full bg-gold/20 rounded-full flex items-center justify-center">
+                        <i data-lucide="shield-check" class="w-12 h-12 text-gold-dark"></i>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-2xl font-serif font-bold text-nude-900 mb-3 text-center md:text-left">
+                        Garantia Incondicional de 7 Dias
+                    </h3>
+                    <p class="text-nude-800 leading-relaxed text-center md:text-left">
+                        O seu risco é absolutamente <strong>zero</strong>. Ao garantir o e-book hoje, você tem 7 dias completos para ler, testar os exercícios e sentir na pele os primeiros resultados. Se por qualquer motivo você não se adaptar ou achar que não é para você, basta nos enviar um email e a plataforma Kiwify devolverá 100% do seu dinheiro, sem burocracia.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= FAQ ================= -->
+    <section class="py-20 bg-[#FAF7F5]">
+        <div class="container mx-auto px-6 max-w-3xl">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-serif font-bold text-nude-900 mb-4">
+                    Perguntas Frequentes
+                </h2>
+                <div class="w-24 h-1 bg-rose mx-auto rounded-full"></div>
+            </div>
+
+            <div class="space-y-4" id="faq-container">
+                <!-- FAQ Item 1 -->
+                <div class="bg-white rounded-xl shadow-sm border border-nude-100 overflow-hidden">
+                    <button class="faq-button w-full px-6 py-4 text-left flex justify-between items-center focus:outline-none">
+                        <span class="font-medium text-nude-900 pr-4">O método funciona para mulheres acima de 50 ou 60 anos?</span>
+                        <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-rose flex-shrink-0"></i>
+                    </button>
+                    <div class="faq-answer px-6 text-nude-800 text-sm bg-nude-50/50">
+                        Sim, perfeitamente! Os músculos faciais respondem aos estímulos em qualquer idade. Embora peles mais maduras precisem de hidratação adequada para o deslizamento, os exercícios de tonificação são altamente eficazes para recuperar a firmeza e o contorno, independentemente da idade.
+                    </div>
+                </div>
+
+                <!-- FAQ Item 2 -->
+                <div class="bg-white rounded-xl shadow-sm border border-nude-100 overflow-hidden">
+                    <button class="faq-button w-full px-6 py-4 text-left flex justify-between items-center focus:outline-none">
+                        <span class="font-medium text-nude-900 pr-4">Em quanto tempo começarei a ver os resultados?</span>
+                        <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-rose flex-shrink-0"></i>
+                    </button>
+                    <div class="faq-answer px-6 text-nude-800 text-sm bg-nude-50/50">
+                        O alívio da tensão e a diminuição do inchaço (pela drenagem linfática) são percebidos logo na primeira sessão. Para resultados de tonificação muscular (redução de papada e lifting), nossas alunas costumam notar diferenças visíveis a partir de 15 a 21 dias de prática consistente.
+                    </div>
+                </div>
+
+                <!-- FAQ Item 3 -->
+                <div class="bg-white rounded-xl shadow-sm border border-nude-100 overflow-hidden">
+                    <button class="faq-button w-full px-6 py-4 text-left flex justify-between items-center focus:outline-none">
+                        <span class="font-medium text-nude-900 pr-4">Preciso comprar cremes caros para fazer as massagens?</span>
+                        <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-rose flex-shrink-0"></i>
+                    </button>
+                    <div class="faq-answer px-6 text-nude-800 text-sm bg-nude-50/50">
+                        Não! O mais importante é usar um produto que permita que suas mãos deslizem sem repuxar a pele. Pode ser o seu hidratante facial de costume, um óleo de rosa mosqueta, óleo de amêndoas ou até azeite de oliva extra virgem. No ebook ensinamos as melhores opções econômicas.
+                    </div>
+                </div>
+
+                <!-- FAQ Item 4 -->
+                <div class="bg-white rounded-xl shadow-sm border border-nude-100 overflow-hidden">
+                    <button class="faq-button w-full px-6 py-4 text-left flex justify-between items-center focus:outline-none">
+                        <span class="font-medium text-nude-900 pr-4">O método é seguro? Pode causar mais rugas?</span>
+                        <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-rose flex-shrink-0"></i>
+                    </button>
+                    <div class="faq-answer px-6 text-nude-800 text-sm bg-nude-50/50">
+                        Totalmente seguro. O segredo está na técnica. Ensinamos exatamente a direção correta dos movimentos (sempre antigravidade e do centro para fora) e o nível de pressão ideal. Seguindo as instruções, é impossível causar mais rugas; pelo contrário, você irá suavizá-las.
+                    </div>
+                </div>
+
+                <!-- FAQ Item 5 -->
+                <div class="bg-white rounded-xl shadow-sm border border-nude-100 overflow-hidden">
+                    <button class="faq-button w-full px-6 py-4 text-left flex justify-between items-center focus:outline-none">
+                        <span class="font-medium text-nude-900 pr-4">Como vou receber o meu ebook e os bônus?</span>
+                        <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-rose flex-shrink-0"></i>
+                    </button>
+                    <div class="faq-answer px-6 text-nude-800 text-sm bg-nude-50/50">
+                        Logo após a confirmação do pagamento, você receberá um email da Kiwify (nossa plataforma segura) com o seu link de acesso. Você poderá baixar os materiais em formato PDF e acessar de qualquer lugar.
+                    </div>
+                </div>
+
+                <!-- FAQ Item 6 -->
+                <div class="bg-white rounded-xl shadow-sm border border-nude-100 overflow-hidden">
+                    <button class="faq-button w-full px-6 py-4 text-left flex justify-between items-center focus:outline-none">
+                        <span class="font-medium text-nude-900 pr-4">E se eu não tiver tempo para praticar todos os dias?</span>
+                        <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-rose flex-shrink-0"></i>
+                    </button>
+                    <div class="faq-answer px-6 text-nude-800 text-sm bg-nude-50/50">
+                        O método foi desenhado exatamente para mulheres ocupadas. Demora apenas de 5 a 10 minutos. Você pode fazer durante o banho, enquanto aplica seu creme noturno ou assistindo TV. A consistência é melhor que a duração.
+                    </div>
+                </div>
+
+                <!-- FAQ Item 7 -->
+                <div class="bg-white rounded-xl shadow-sm border border-nude-100 overflow-hidden">
+                    <button class="faq-button w-full px-6 py-4 text-left flex justify-between items-center focus:outline-none">
+                        <span class="font-medium text-nude-900 pr-4">Terei acesso ao material por quanto tempo?</span>
+                        <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-rose flex-shrink-0"></i>
+                    </button>
+                    <div class="faq-answer px-6 text-nude-800 text-sm bg-nude-50/50">
+                        O acesso é vitalício. Uma vez que você faça o download, o e-book e os bônus são seus para sempre.
+                    </div>
+                </div>
+
+                <!-- FAQ Item 8 -->
+                <div class="bg-white rounded-xl shadow-sm border border-nude-100 overflow-hidden">
+                    <button class="faq-button w-full px-6 py-4 text-left flex justify-between items-center focus:outline-none">
+                        <span class="font-medium text-nude-900 pr-4">Posso ler o material pelo celular?</span>
+                        <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-rose flex-shrink-0"></i>
+                    </button>
+                    <div class="faq-answer px-6 text-nude-800 text-sm bg-nude-50/50">
+                        Sim. Todos os materiais estão no formato PDF, que abre perfeitamente em qualquer smartphone, tablet ou computador, de forma nítida e confortável para leitura.
+                    </div>
+                </div>
+
+                <!-- FAQ Item 9 -->
+                <div class="bg-white rounded-xl shadow-sm border border-nude-100 overflow-hidden">
+                    <button class="faq-button w-full px-6 py-4 text-left flex justify-between items-center focus:outline-none">
+                        <span class="font-medium text-nude-900 pr-4">Quais são as formas de pagamento aceitas?</span>
+                        <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-rose flex-shrink-0"></i>
+                    </button>
+                    <div class="faq-answer px-6 text-nude-800 text-sm bg-nude-50/50">
+                        A plataforma Kiwify aceita pagamentos via PIX (liberação imediata), Cartão de Crédito (liberação imediata) e Boleto Bancário (pode levar até 3 dias úteis para compensar).
+                    </div>
+                </div>
+
+                <!-- FAQ Item 10 -->
+                <div class="bg-white rounded-xl shadow-sm border border-nude-100 overflow-hidden">
+                    <button class="faq-button w-full px-6 py-4 text-left flex justify-between items-center focus:outline-none">
+                        <span class="font-medium text-nude-900 pr-4">Se eu não gostar, como peço o reembolso?</span>
+                        <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-rose flex-shrink-0"></i>
+                    </button>
+                    <div class="faq-answer px-6 text-nude-800 text-sm bg-nude-50/50">
+                        Dentro do prazo de 7 dias após a compra, você tem garantia incondicional. Basta enviar um email para o nosso suporte que está no material, e devolvemos 100% do seu dinheiro, sem ressentimentos.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= FINAL CTA ================= -->
+    <section class="py-24 bg-white relative overflow-hidden">
+        <div class="container mx-auto px-6 relative z-10 text-center max-w-4xl">
+            <h2 class="text-3xl md:text-5xl font-serif font-bold text-nude-900 mb-6 leading-tight">
+                Você está a um clique de recuperar o <span class="text-rose">frescor</span> e a <span class="text-rose">firmeza</span> do seu rosto.
+            </h2>
+            <p class="text-lg text-nude-800 mb-10 max-w-2xl mx-auto">
+                Não espere que as marcas do tempo ditem como você se sente ao olhar no espelho. O poder de transformar sua aparência está, literalmente, em suas mãos.
+            </p>
+            
+            <a href="https://pay.kiwify.com.br/SEU_LINK_AQUI" class="inline-block px-10 py-5 bg-rose text-white rounded-full font-bold text-xl shadow-[0_10px_30px_-10px_rgba(196,139,139,0.8)] hover:bg-rose-dark transition-all transform hover:-translate-y-1 mb-6">
+                Sim, Quero o Método Natural Face Sculpting
+            </a>
+            
+            <p class="text-sm text-nude-500 font-medium">Apenas R$ 37,00 • Acesso Imediato • Risco Zero</p>
+        </div>
+        
+        <!-- Decorative subtle background -->
+        <div class="absolute inset-0 pointer-events-none flex justify-center items-center opacity-5">
+            <i data-lucide="flower-2" class="w-96 h-96 text-nude-900"></i>
+        </div>
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="bg-nude-900 text-nude-200 py-12">
+        <div class="container mx-auto px-6 text-center">
+            <h3 class="font-serif font-bold text-2xl text-white mb-6">A Arte de Esculpir o Rosto</h3>
+            <p class="text-sm text-nude-400 max-w-2xl mx-auto mb-8">
+                Este produto não substitui o parecer médico profissional. Consulte sempre um médico para assuntos relacionados à sua saúde. Os resultados podem variar de pessoa para pessoa.
+            </p>
+            <div class="flex justify-center gap-6 text-sm text-nude-400 mb-8">
+                <a href="#" class="hover:text-white transition-colors">Termos de Uso</a>
+                <a href="#" class="hover:text-white transition-colors">Políticas de Privacidade</a>
+                <a href="#" class="hover:text-white transition-colors">Contato</a>
+            </div>
+            <p class="text-xs text-nude-500">
+                &copy; <script>document.write(new Date().getFullYear())</script> Todos os direitos reservados.
+            </p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // FAQ Accordion Logic
+        document.addEventListener('DOMContentLoaded', () => {
+            const faqButtons = document.querySelectorAll('.faq-button');
+            
+            faqButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const answer = button.nextElementSibling;
+                    const isOpen = answer.classList.contains('open');
+
+                    // Close all answers
+                    document.querySelectorAll('.faq-answer').forEach(ans => {
+                        ans.classList.remove('open');
+                    });
+                    document.querySelectorAll('.faq-button').forEach(btn => {
+                        btn.classList.remove('open');
+                    });
+
+                    // If it wasn't open, open it
+                    if (!isOpen) {
+                        answer.classList.add('open');
+                        button.classList.add('open');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
