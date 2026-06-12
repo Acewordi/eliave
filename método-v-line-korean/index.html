@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-PT" class="scroll-smooth">
 <head>
+    <link rel="icon" href="/favicon.ico" type="image/favicon">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>A Arte de Esculpir o Rosto | Método Coreano de Yoga Facial</title>
@@ -12,8 +13,8 @@
     <meta property="og:description" content="Reduza a flacidez e a papada com apenas 10 minutos por dia. Método 100% natural.">
     <meta property="og:type" content="website">
 
-    <!-- Pré-carregamento da imagem principal para melhor performance (LCP) -->
-    <link rel="preload" href="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?auto=format&fit=crop&w=800&q=80" as="image">
+    <!-- Pré-carregamento da nova imagem principal para melhor performance (LCP) -->
+    <link rel="preload" href="https://i.imgur.com/OpSq1EU.png" as="image">
 
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -188,7 +189,7 @@
                 <!-- Conteúdo da Imagem / Capa -->
                 <div class="w-full lg:w-1/2 relative animate-fade-up mt-8 lg:mt-0" style="animation-delay: 0.2s;">
                     <div class="relative w-full max-w-[400px] mx-auto aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl border-[8px] border-white group bg-white">
-                        <img src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?auto=format&fit=crop&w=800&q=80" alt="Mulher com pele perfeita a fazer massagem facial suave" class="w-full h-full object-cover transform transition-transform duration-1000 group-hover:scale-105">
+                        <img src="https://i.imgur.com/OpSq1EU.png" alt="Capa do Ebook A Arte de Esculpir o Rosto" class="w-full h-full object-cover transform transition-transform duration-1000 group-hover:scale-105">
                         
                         <div class="absolute bottom-0 left-0 w-full bg-white/95 backdrop-blur-md p-6 text-center border-t border-nude-100/50">
                             <span class="text-gold-dark text-xs font-bold tracking-widest uppercase mb-2 block">E-book Premium</span>
@@ -339,7 +340,7 @@
                         Assim como exercitamos o nosso corpo para mantê-lo firme, os mais de 40 músculos do nosso rosto também precisam de estímulo constante. Quando são negligenciados, a gravidade e o tempo cobram o seu preço sob a forma de flacidez.
                     </p>
                     <p class="text-nude-800 mb-8 leading-relaxed">
-                        Inspirado na sabedoria milenar asiática e nas rotinas de beleza das mulheres coreanas, o e-book <strong>A Arte de Esculpir o Rosto</strong> revela um passo a passo simples. Irá aprender a ativar a circulação, drenar as toxinas e fortalecer a musculatura facial de forma ativa com as próprias mãos.
+                        Inspirado na sabedoria milenar asiática e nas rotinas de beleza das mulheres coreanas, o e-book <strong>A Arte de Esculpir o Rosto</strong> revela um passo a passo simples. Irá aprender a ativar a circulação, drena as toxinas e fortalecer a musculatura facial de forma ativa com as próprias mãos.
                     </p>
                     
                     <ul class="space-y-4">
@@ -667,11 +668,11 @@
                         <div class="text-5xl font-serif font-bold text-rose mb-2">R$ 37,00</div>
                         <p class="text-sm text-nude-500">Pagamento único sem taxas adicionais. Acesso permanente.</p>
                         
-                        <!-- Contador de Escassez Suave -->
+                        <!-- Contador de Escassez Suave (Atualizado para 12h) -->
                         <div class="mt-4 pt-3 border-t border-nude-200/60 text-xs text-rose font-medium flex items-center justify-center gap-1">
                             <i data-lucide="clock" class="w-3.5 h-3.5"></i>
                             <span>Esta oferta especial expira em: </span>
-                            <span id="countdown" class="font-bold">14:59</span>
+                            <span id="countdown" class="font-bold">12:00:00</span>
                         </div>
                     </div>
 
@@ -965,12 +966,12 @@
 
                 <div>
                     <strong class="text-nude-900 block mb-1">4. Cookies e Tecnologias de Rastreamento</strong>
-                    <p>Esta página pode utilizar cookies básicos (como o Pixel do Facebook/Meta ou Google Analytics) com o único objetivo de entender o comportamento de navegação em nossa página de vendas e otimizar nossas campanhas de publicidade.</p>
+                    <p>Esta página pode utilizar cookies básicos (como o Pixel do Facebook/Meta ou Google Analytics) com o único objetivo de entender o comportamento de navegação em nossa página de vendas e otimizar nossas campainghas de publicidade.</p>
                 </div>
 
                 <div>
                     <strong class="text-nude-900 block mb-1">5. Segurança</strong>
-                    <p>Tomamos todas as precauções razoáveis e seguimos as melhores práticas da indústria para nos certificar de que as suas informações não sejam perdidas, usurpadas, acessadas, divulgadas, alteradas ou destruídas de forma inadequada.</p>
+                    <p>Tomamos todas as precauções razoáveis e seguimos as melhores práticas da indústria para nos certificar de que as suas informações não sejam perdidas, usurpadas, acessadas, disclosed, alteradas ou destruídas de forma inadequada.</p>
                 </div>
             </div>
             <div class="p-4 border-t border-nude-100 bg-nude-50 text-right">
@@ -995,17 +996,19 @@
             document.getElementById('step-result').classList.remove('hidden');
         }
 
-        // Contador de Escassez Elegante (Reinicia em 15 minutos se chegar a zero)
+        // Contador de Escassez Elegante (Suporta HH:MM:SS de forma dinâmica)
         function startCountdown(duration, display) {
-            var timer = duration, minutes, seconds;
+            var timer = duration, hours, minutes, seconds;
             setInterval(function () {
-                minutes = parseInt(timer / 60, 10);
+                hours = parseInt(timer / 3600, 10);
+                minutes = parseInt((timer % 3600) / 60, 10);
                 seconds = parseInt(timer % 60, 10);
 
+                hours = hours < 10 ? "0" + hours : hours;
                 minutes = minutes < 10 ? "0" + minutes : minutes;
                 seconds = seconds < 10 ? "0" + seconds : seconds;
 
-                display.textContent = minutes + ":" + seconds;
+                display.textContent = hours + ":" + minutes + ":" + seconds;
 
                 if (--timer < 0) {
                     timer = duration; // reinicia o temporizador suavemente
@@ -1074,10 +1077,10 @@
                 }
             });
 
-            // Inicialização do Contador
-            var fifteenMinutes = 60 * 15,
+            // Inicialização do Contador em 12 Horas (12 * 3600 segundos)
+            var twelveHours = 60 * 60 * 12,
                 display = document.querySelector('#countdown');
-            startCountdown(fifteenMinutes, display);
+            startCountdown(twelveHours, display);
         });
 
         // Controlo dos Modais
