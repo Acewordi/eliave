@@ -86,21 +86,23 @@
         /* Smooth Scrolling */
         html { scroll-behavior: smooth; }
         
-        /* Animações Personalizadas */
+        /* Animações Personalizadas com Aceleração GPU */
         @keyframes fadeUp {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
+            from { opacity: 0; transform: translate3d(0, 20px, 0); }
+            to { opacity: 1; transform: translate3d(0, 0, 0); }
         }
         .animate-fade-up {
-            animation: fadeUp 0.8s ease-out forwards;
+            animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            will-change: transform, opacity;
         }
         
         /* Transições do Accordion do FAQ */
         .faq-answer {
-            transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out, padding 0.3s ease-in-out;
+            transition: max-height 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease-out;
             max-height: 0;
             opacity: 0;
             overflow: hidden;
+            will-change: max-height, opacity;
         }
         .faq-answer.open {
             max-height: 500px;
@@ -109,10 +111,11 @@
             padding-bottom: 1rem;
         }
         .faq-icon {
-            transition: transform 0.3s ease;
+            transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            will-change: transform;
         }
         .faq-button.open .faq-icon {
-            transform: rotate(180deg);
+            transform: rotate3d(0, 0, 1, 180deg);
         }
 
         /* Efeito Vidro Fosco (Glassmorphism) */
@@ -127,31 +130,40 @@
         .modal {
             opacity: 0;
             visibility: hidden;
-            transition: opacity 0.3s ease, visibility 0.3s ease;
+            transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.3s ease;
+            will-change: opacity, visibility;
         }
         .modal.active {
             opacity: 1;
             visibility: visible;
         }
         .modal-content {
-            transform: translateY(20px);
-            transition: transform 0.3s ease;
+            transform: translate3d(0, 20px, 0);
+            transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            will-change: transform;
         }
         .modal.active .modal-content {
-            transform: translateY(0);
+            transform: translate3d(0, 0, 0);
+        }
+
+        /* Otimização de Performance do Navbar no Scroll */
+        #navbar.scrolled {
+            box-shadow: 0 4px 20px -2px rgba(196, 139, 139, 0.1);
+            border-bottom-color: #F7F3EB;
+            background-color: rgba(255, 255, 255, 0.95);
         }
     </style>
 </head>
 <body class="font-sans text-nude-900 bg-nude-50 antialiased selection:bg-rose-light selection:text-nude-900 pb-16 md:pb-0">
 
     <!-- ================= CABEÇALHO PROFISSIONAL ================= -->
-    <nav id="navbar" class="fixed top-0 w-full z-50 transition-all duration-300 bg-white/80 backdrop-blur-md border-b border-transparent py-4">
+    <nav id="navbar" class="fixed top-0 w-full z-50 transition-all duration-300 bg-white/80 backdrop-blur-md border-b border-transparent py-4 transform-gpu will-change-[background-color,box-shadow,border-color]">
         <div class="container mx-auto px-6 flex justify-between items-center">
             <a href="#" class="text-2xl font-serif font-bold text-nude-900 tracking-widest flex items-center gap-2" aria-label="Eliave Home">
                 <i data-lucide="flower-2" class="w-6 h-6 text-rose" aria-hidden="true"></i>
                 ELIAVE
             </a>
-            <a href="#oferta" class="hidden md:inline-flex items-center gap-2 px-6 py-2.5 bg-nude-900 text-white rounded-full font-medium text-sm hover:bg-rose transition-colors duration-300">
+            <a href="#oferta" class="hidden md:inline-flex items-center gap-2 px-6 py-2.5 bg-nude-900 text-white rounded-full font-medium text-sm hover:bg-rose transition-colors duration-300 transform-gpu">
                 Garantir Acesso <i data-lucide="arrow-right" class="w-4 h-4"></i>
             </a>
         </div>
@@ -183,7 +195,7 @@
                     </p>
                     
                     <div class="flex flex-col sm:flex-row items-center gap-5 justify-center lg:justify-start mb-8">
-                        <a href="#oferta" class="w-full sm:w-auto px-10 py-4 bg-nude-900 text-white rounded-full font-semibold text-lg shadow-xl shadow-nude-900/20 hover:bg-rose transition-colors duration-300 transform hover:-translate-y-0.5 text-center flex items-center justify-center gap-2">
+                        <a href="#oferta" class="checkout-btn w-full sm:w-auto px-10 py-4 bg-nude-900 text-white rounded-full font-semibold text-lg shadow-xl shadow-nude-900/20 hover:bg-rose transition-colors duration-300 transform hover:-translate-y-0.5 text-center flex items-center justify-center gap-2 transform-gpu">
                             Quero Esculpir o Meu Rosto <i data-lucide="arrow-right" class="w-5 h-5"></i>
                         </a>
                         <div class="text-center sm:text-left">
@@ -199,15 +211,15 @@
                         </div>
                         <div class="flex items-center gap-2">
                             <i data-lucide="shield-check" class="w-5 h-5 text-gold-dark" aria-hidden="true"></i>
-                            <span>Compra Segura Kiwify</span>
+                            <span>Compra Secura Kiwify</span>
                         </div>
                     </div>
                 </div>
 
                 <!-- Conteúdo da Imagem / Capa -->
                 <div class="w-full lg:w-1/2 relative animate-fade-up mt-8 lg:mt-0" style="animation-delay: 0.2s;">
-                    <div class="relative w-full max-w-[400px] mx-auto aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl border-[8px] border-white group bg-white">
-                        <img src="https://i.imgur.com/OpSq1EU.png" alt="Capa do Ebook A Arte de Esculpir o Rosto" class="w-full h-full object-cover transform transition-transform duration-1000 group-hover:scale-105">
+                    <div class="relative w-full max-w-[400px] mx-auto aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl border-[8px] border-white group bg-white transform-gpu">
+                        <img src="https://i.imgur.com/OpSq1EU.png" alt="Capa do Ebook A Arte de Esculpir o Rosto" class="w-full h-full object-cover transform transition-transform duration-1000 group-hover:scale-105 will-change-transform">
                         
                         <div class="absolute bottom-0 left-0 w-full bg-white/95 backdrop-blur-md p-6 text-center border-t border-nude-100/50">
                             <span class="text-gold-dark text-xs font-bold tracking-widest uppercase mb-2 block">E-book Premium</span>
@@ -285,7 +297,7 @@
         </div>
     </section>
 
-    <!-- ================= NOVO: MICRO-QUIZ DE DIAGNÓSTICO FACIAL (PROATIVO) ================= -->
+    <!-- ================= MICRO-QUIZ DE DIAGNÓSTICO FACIAL ================= -->
     <section class="py-16 bg-gradient-to-b from-white to-[#F7F3EB]">
         <div class="container mx-auto px-6 max-w-2xl bg-white p-8 md:p-10 rounded-3xl shadow-premium border border-nude-100">
             <div class="text-center mb-8">
@@ -297,7 +309,7 @@
             <!-- Etapas do Quiz -->
             <div id="quiz-container">
                 <!-- Pergunta 1 -->
-                <div class="quiz-step" id="step-1">
+                <div class="quiz-step animate-fade-up" id="step-1">
                     <p class="text-base font-semibold text-nude-900 mb-4 text-center">1. Qual é a região do rosto que mais lhe incomoda atualmente?</p>
                     <div class="space-y-3">
                         <button onclick="nextQuizStep(1, 'A flacidez nas bochechas e perda do contorno.')" class="w-full text-left p-4 rounded-xl border border-nude-200 hover:border-rose hover:bg-rose-light/10 transition-all font-medium text-sm text-nude-800">Bochechas caídas / Perda de contorno da mandíbula</button>
@@ -307,16 +319,16 @@
                 </div>
 
                 <!-- Pergunta 2 -->
-                <div class="quiz-step hidden" id="step-2">
+                <div class="quiz-step hidden animate-fade-up" id="step-2">
                     <p class="text-base font-semibold text-nude-900 mb-4 text-center">2. Com que frequência sente o seu rosto inchado, especialmente de manhã?</p>
                     <div class="space-y-3">
                         <button onclick="nextQuizStep(2, 'Quase todos os dias.')" class="w-full text-left p-4 rounded-xl border border-nude-200 hover:border-rose hover:bg-rose-light/10 transition-all font-medium text-sm text-nude-800">Quase todas as manhãs sinto retenção de líquidos</button>
-                        <button onclick="nextQuizStep(2, 'Raramente ou apenas quando durmo mal.')" class="w-full text-left p-4 rounded-xl border border-nude-200 hover:border-rose hover:bg-rose-light/10 transition-all font-medium text-sm text-nude-800 font-medium text-sm">Apenas ocasionalmente ou quando durmo poucas horas</button>
+                        <button onclick="nextQuizStep(2, 'Raramente ou apenas quando durmo mal.')" class="w-full text-left p-4 rounded-xl border border-nude-200 hover:border-rose hover:bg-rose-light/10 transition-all font-medium text-sm text-nude-800">Apenas ocasionalmente ou quando durmo poucas horas</button>
                     </div>
                 </div>
 
                 <!-- Pergunta 3 -->
-                <div class="quiz-step hidden" id="step-3">
+                <div class="quiz-step hidden animate-fade-up" id="step-3">
                     <p class="text-base font-semibold text-nude-900 mb-4 text-center">3. Quanto tempo consegue dedicar diariamente ao autocuidado?</p>
                     <div class="space-y-3">
                         <button onclick="finishQuiz()" class="w-full text-left p-4 rounded-xl border border-nude-200 hover:border-rose hover:bg-rose-light/10 transition-all font-medium text-sm text-nude-800">Apenas 5 a 10 minutos (procurando algo prático)</button>
@@ -347,7 +359,7 @@
             <div class="flex flex-col-reverse lg:flex-row items-center gap-12 lg:gap-20">
                 
                 <div class="w-full lg:w-1/2">
-                    <img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=800&q=80" alt="Mulher sorridente com pele saudável e radiante" class="rounded-2xl shadow-premium w-full object-cover aspect-square md:aspect-video lg:aspect-square">
+                    <img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=800&q=80" alt="Mulher sorridente com pele saudável e radiante" class="rounded-2xl shadow-premium w-full object-cover aspect-square md:aspect-video lg:aspect-square" loading="lazy">
                 </div>
 
                 <div class="w-full lg:w-1/2">
@@ -694,7 +706,7 @@
                         </div>
                     </div>
 
-                    <a href="https://pay.kiwify.com.br/HkT0bOZ" class="checkout-btn block w-full py-5 bg-rose text-white text-center rounded-xl font-bold text-xl shadow-lg shadow-rose/30 hover:bg-rose-dark transition-all transform hover:-translate-y-1 mb-4">
+                    <a href="https://pay.kiwify.com.br/HkT0bOZ" class="checkout-btn block w-full py-5 bg-rose text-white text-center rounded-xl font-bold text-xl shadow-lg shadow-rose/30 hover:bg-rose-dark transition-all transform hover:-translate-y-1 mb-4 transform-gpu">
                         Adquirir Agora por R$ 37,00
                     </a>
                     
@@ -862,7 +874,7 @@
                 Evite que o tempo determine de forma exclusiva o aspeto do seu rosto. O método para atenuar as marcas de fadiga está acessível na ponta dos seus dedos.
             </p>
             
-            <a href="https://pay.kiwify.com.br/HkT0bOZ" class="checkout-btn inline-block px-10 py-5 bg-rose text-white rounded-full font-bold text-xl shadow-[0_10px_30px_-10px_rgba(196,139,139,0.8)] hover:bg-rose-dark transition-all transform hover:-translate-y-1 mb-6">
+            <a href="https://pay.kiwify.com.br/HkT0bOZ" class="checkout-btn inline-block px-10 py-5 bg-rose text-white rounded-full font-bold text-xl shadow-[0_10px_30px_-10px_rgba(196,139,139,0.8)] hover:bg-rose-dark transition-all transform hover:-translate-y-1 mb-6 transform-gpu">
                 Quero o Método Natural V-Line
             </a>
             
@@ -894,8 +906,8 @@
         </div>
     </footer>
 
-    <!-- ================= BARRA DE COMPRA FLUTUANTE PARA TELEMÓVEL (PROATIVO) ================= -->
-    <div id="sticky-bar" class="fixed bottom-0 left-0 w-full bg-white/95 backdrop-blur-md border-t border-nude-100 p-4 flex md:hidden justify-between items-center z-[90] shadow-xl translate-y-full transition-transform duration-300">
+    <!-- ================= BARRA DE COMPRA FLUTUANTE PARA TELEMÓVEL ================= -->
+    <div id="sticky-bar" class="fixed bottom-0 left-0 w-full bg-white/95 backdrop-blur-md border-t border-nude-100 p-4 flex md:hidden justify-between items-center z-[90] shadow-xl translate-y-full transition-transform duration-300 transform-gpu will-change-transform">
         <div class="text-left">
             <span class="block text-xs text-nude-500 font-bold uppercase leading-none">Método V-Line</span>
             <span class="text-lg font-serif font-bold text-rose leading-tight">R$ 37,00</span>
@@ -905,8 +917,8 @@
         </a>
     </div>
 
-    <!-- ================= BOTÃO VOLTAR AO TOPO (PROATIVO) ================= -->
-    <button id="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'});" class="fixed bottom-6 right-6 z-[80] p-3 bg-white hover:bg-rose-light border border-nude-100 rounded-full shadow-lg opacity-0 pointer-events-none transition-all duration-300" aria-label="Voltar ao topo">
+    <!-- ================= BOTÃO VOLTAR AO TOPO ================= -->
+    <button id="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'});" class="fixed bottom-6 right-6 z-[80] p-3 bg-white hover:bg-rose-light border border-nude-100 rounded-full shadow-lg opacity-0 pointer-events-none transition-all duration-300 transform-gpu will-change-[opacity,transform]" aria-label="Voltar ao topo">
         <i data-lucide="arrow-up" class="w-5 h-5 text-nude-900"></i>
     </button>
 
@@ -1059,41 +1071,56 @@
                 });
             });
 
-            // Efeitos de Scroll (Navbar, Botão de Topo, Barra Móvel de Compra)
+            // Efeitos de Scroll Altamente Otimizados (Debounce via requestAnimationFrame)
             const navbar = document.getElementById('navbar');
             const backToTop = document.getElementById('back-to-top');
             const stickyBar = document.getElementById('sticky-bar');
+            
+            let lastKnownScrollPosition = 0;
+            let ticking = false;
 
-            window.addEventListener('scroll', () => {
-                const scrollY = window.scrollY;
-
+            function handleScrollEffects(scrollPos) {
                 // Transição do Header ao rolar
-                if (scrollY > 20) {
-                    navbar.classList.add('shadow-md');
-                    navbar.classList.replace('border-transparent', 'border-nude-100');
+                if (scrollPos > 20) {
+                    navbar.classList.add('scrolled');
                 } else {
-                    navbar.classList.remove('shadow-md');
-                    navbar.classList.replace('border-nude-100', 'border-transparent');
+                    navbar.classList.remove('scrolled');
                 }
 
-                // Apresentação do botão voltar ao topo
-                if (scrollY > 400) {
-                    backToTop.classList.remove('opacity-0', 'pointer-events-none');
-                    backToTop.classList.add('opacity-100');
+                // Apresentação do botão voltar ao topo e barra móvel de checkout
+                if (scrollPos > 400) {
+                    if (backToTop.classList.contains('opacity-0')) {
+                        backToTop.classList.remove('opacity-0', 'pointer-events-none');
+                        backToTop.classList.add('opacity-100');
+                    }
                     
-                    // Apresentação da barra móvel de compra
-                    if (stickyBar) {
+                    if (stickyBar && stickyBar.classList.contains('translate-y-full')) {
                         stickyBar.classList.remove('translate-y-full');
                     }
                 } else {
-                    backToTop.classList.add('opacity-0', 'pointer-events-none');
-                    backToTop.classList.remove('opacity-100');
+                    if (!backToTop.classList.contains('opacity-0')) {
+                        backToTop.classList.add('opacity-0', 'pointer-events-none');
+                        backToTop.classList.remove('opacity-100');
+                    }
                     
-                    if (stickyBar) {
+                    if (stickyBar && !stickyBar.classList.contains('translate-y-full')) {
                         stickyBar.classList.add('translate-y-full');
                     }
                 }
-            });
+            }
+
+            // Otimização Crucial: Reduz lag no mobile ao correr o scroll apenas no ciclo de renderização do ecrã
+            window.addEventListener('scroll', () => {
+                lastKnownScrollPosition = window.scrollY;
+
+                if (!ticking) {
+                    window.requestAnimationFrame(() => {
+                        handleScrollEffects(lastKnownScrollPosition);
+                        ticking = false;
+                    });
+                    ticking = true;
+                }
+            }, { passive: true });
 
             // Inicialização do Contador em 12 Horas (12 * 3600 segundos)
             var twelveHours = 60 * 60 * 12,
