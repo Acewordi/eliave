@@ -195,7 +195,8 @@
                     </p>
                     
                     <div class="flex flex-col sm:flex-row items-center gap-5 justify-center lg:justify-start mb-8">
-                        <a href="#oferta" class="checkout-btn w-full sm:w-auto px-10 py-4 bg-nude-900 text-white rounded-full font-semibold text-lg shadow-xl shadow-nude-900/20 hover:bg-rose transition-colors duration-300 transform hover:-translate-y-0.5 text-center flex items-center justify-center gap-2 transform-gpu">
+                        <!-- REMOVIDO 'checkout-btn' deste botão de ancoragem interna -->
+                        <a href="#oferta" class="w-full sm:w-auto px-10 py-4 bg-nude-900 text-white rounded-full font-semibold text-lg shadow-xl shadow-nude-900/20 hover:bg-rose transition-colors duration-300 transform hover:-translate-y-0.5 text-center flex items-center justify-center gap-2 transform-gpu">
                             Quero Esculpir o Meu Rosto <i data-lucide="arrow-right" class="w-5 h-5"></i>
                         </a>
                         <div class="text-center sm:text-left">
@@ -479,7 +480,7 @@
                     </div>
                     <div>
                         <h3 class="text-xl font-serif font-bold text-nude-900 mb-2">Fundamentos da Estética Natural</h3>
-                        <p class="text-nude-800 leading-relaxed text-sm md:text-base">Entenda a anatomia do seu rosto, compreenda como os músculos perdem a firmeza e aprenda a preparar adequadamente a sua pele com óleos adequados e uma postura ideal.</p>
+                        <p class="text-nude-800 leading-relaxed text-sm md:text-base">Entenda a anatomia do seu rosto, compreenda como os muscles perdem a firmeza e aprenda a preparar adequadamente a sua pele com óleos adequados e uma postura ideal.</p>
                     </div>
                 </div>
 
@@ -706,6 +707,7 @@
                         </div>
                     </div>
 
+                    <!-- MANTÉM 'checkout-btn' para rastrear o clique que vai para a Kiwify -->
                     <a href="https://pay.kiwify.com.br/HkT0bOZ" class="checkout-btn block w-full py-5 bg-rose text-white text-center rounded-xl font-bold text-xl shadow-lg shadow-rose/30 hover:bg-rose-dark transition-all transform hover:-translate-y-1 mb-4 transform-gpu">
                         Adquirir Agora por R$ 37,00
                     </a>
@@ -874,6 +876,7 @@
                 Evite que o tempo determine de forma exclusiva o aspeto do seu rosto. O método para atenuar as marcas de fadiga está acessível na ponta dos seus dedos.
             </p>
             
+            <!-- MANTÉM 'checkout-btn' para rastrear o clique que vai para a Kiwify -->
             <a href="https://pay.kiwify.com.br/HkT0bOZ" class="checkout-btn inline-block px-10 py-5 bg-rose text-white rounded-full font-bold text-xl shadow-[0_10px_30px_-10px_rgba(196,139,139,0.8)] hover:bg-rose-dark transition-all transform hover:-translate-y-1 mb-6 transform-gpu">
                 Quero o Método Natural V-Line
             </a>
@@ -912,6 +915,7 @@
             <span class="block text-xs text-nude-500 font-bold uppercase leading-none">Método V-Line</span>
             <span class="text-lg font-serif font-bold text-rose leading-tight">R$ 37,00</span>
         </div>
+        <!-- MANTÉM 'checkout-btn' para rastrear o clique que vai para a Kiwify -->
         <a href="https://pay.kiwify.com.br/HkT0bOZ" class="checkout-btn px-5 py-2.5 bg-rose text-white text-sm font-bold rounded-lg shadow-md shadow-rose/20 hover:bg-rose-dark transition-all">
             Comprar Agora
         </a>
@@ -1127,7 +1131,7 @@
                 display = document.querySelector('#countdown');
             startCountdown(twelveHours, display);
 
-            // Rastrear InitiateCheckout nos cliques dos botões de compra
+            // Rastrear InitiateCheckout nos cliques dos botões de compra (Apenas elementos com a classe checkout-btn)
             const checkoutBtns = document.querySelectorAll('.checkout-btn');
             checkoutBtns.forEach(btn => {
                 btn.addEventListener('click', () => {
