@@ -176,20 +176,48 @@
 </head>
 <body class="font-sans text-nude-900 bg-nude-50 antialiased selection:bg-rose-light selection:text-nude-900 pb-16 md:pb-0">
 
-    <!-- ================= CABEÇALHO PROFISSIONAL ================= -->
-    <nav id="navbar" class="fixed top-0 w-full z-50 transition-all duration-300 bg-white/80 backdrop-blur-md border-b border-transparent py-4 transform-gpu will-change-[background-color,box-shadow,border-color]">
-        <div class="container mx-auto px-6 flex justify-between items-center">
-            <a href="#" class="text-2xl font-serif font-bold text-nude-900 tracking-widest flex items-center gap-2 group" aria-label="Eliave Home">
-                <i data-lucide="flower-2" class="w-6 h-6 text-rose group-hover:rotate-12 transition-transform duration-300" aria-hidden="true"></i>
-                ELIAVE
-            </a>
-            <div class="hidden md:inline-flex rounded-full p-[2px] bg-gradient-to-r from-rose via-gold to-rose animate-border-gradient transition-all duration-500 hover:shadow-[0_0_15px_rgba(196,139,139,0.4)] hover:-translate-y-0.5">
-                <a href="#oferta" class="items-center gap-2 px-6 py-2 bg-nude-900 text-white rounded-full font-medium text-sm hover:bg-nude-800 transition-colors duration-300 transform-gpu flex h-full w-full">
-                    Garantir Acesso <i data-lucide="arrow-right" class="w-4 h-4"></i>
-                </a>
+    <!-- ================= HEADER COMPLETO ================= -->
+    <div id="main-header-wrapper" class="fixed top-0 w-full z-50 flex flex-col transform-gpu">
+        
+        <!-- ================= TOP BAR DE CONFIANÇA ================= -->
+        <div id="top-bar" class="bg-nude-900 w-full transition-all duration-300 overflow-hidden max-h-12 opacity-100 border-b border-nude-800">
+            <div class="container mx-auto px-6">
+                <div class="flex items-center justify-between py-2.5 text-[9px] sm:text-[10px] text-nude-100 font-semibold tracking-widest uppercase">
+                    <div class="flex items-center gap-1.5 whitespace-nowrap">
+                        <i data-lucide="shield-check" class="w-3.5 h-3.5 text-gold" aria-hidden="true"></i>
+                        <span>Compra 100% Segura</span>
+                    </div>
+                    <div class="hidden sm:flex items-center gap-1.5 whitespace-nowrap">
+                        <i data-lucide="zap" class="w-3.5 h-3.5 text-gold" aria-hidden="true"></i>
+                        <span>Acesso Imediato</span>
+                    </div>
+                    <div class="flex items-center gap-1.5 whitespace-nowrap">
+                        <i data-lucide="credit-card" class="w-3.5 h-3.5 text-gold" aria-hidden="true"></i>
+                        <span>Em até 12x no cartão</span>
+                    </div>
+                    <div class="hidden lg:flex items-center gap-1.5 whitespace-nowrap">
+                        <i data-lucide="award" class="w-3.5 h-3.5 text-gold" aria-hidden="true"></i>
+                        <span>Garantia de 7 Dias</span>
+                    </div>
+                </div>
             </div>
         </div>
-    </nav>
+
+        <!-- ================= CABEÇALHO PROFISSIONAL ================= -->
+        <nav id="navbar" class="w-full transition-all duration-300 bg-white/80 backdrop-blur-md border-b border-transparent py-4 transform-gpu will-change-[background-color,box-shadow,border-color]">
+            <div class="container mx-auto px-6 flex justify-between items-center">
+                <a href="#" class="text-2xl font-serif font-bold text-nude-900 tracking-widest flex items-center gap-2 group" aria-label="Eliave Home">
+                    <i data-lucide="flower-2" class="w-6 h-6 text-rose group-hover:rotate-12 transition-transform duration-300" aria-hidden="true"></i>
+                    ELIAVE
+                </a>
+                <div class="hidden md:inline-flex rounded-full p-[2px] bg-gradient-to-r from-rose via-gold to-rose animate-border-gradient transition-all duration-500 hover:shadow-[0_0_15px_rgba(196,139,139,0.4)] hover:-translate-y-0.5">
+                    <a href="#oferta" class="items-center gap-2 px-6 py-2 bg-nude-900 text-white rounded-full font-medium text-sm hover:bg-nude-800 transition-colors duration-300 transform-gpu flex h-full w-full">
+                        Garantir Acesso <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </div>
 
     <!-- ================= SECÇÃO HERO ================= -->
     <header class="relative overflow-hidden bg-gradient-to-br from-[#FAF7F5] via-[#FDFBF7] to-[#F4E8D4]/40 pt-32 pb-24 lg:pt-40 lg:pb-32">
@@ -1115,11 +1143,21 @@
             let ticking = false;
 
             function handleScrollEffects(scrollPos) {
+                const topBar = document.getElementById('top-bar');
+
                 // Transição do Header ao rolar
                 if (scrollPos > 20) {
                     navbar.classList.add('scrolled');
+                    if (topBar) {
+                        topBar.classList.add('max-h-0', 'opacity-0');
+                        topBar.classList.remove('max-h-12', 'opacity-100');
+                    }
                 } else {
                     navbar.classList.remove('scrolled');
+                    if (topBar) {
+                        topBar.classList.remove('max-h-0', 'opacity-0');
+                        topBar.classList.add('max-h-12', 'opacity-100');
+                    }
                 }
 
                 // Apresentação do botão voltar ao topo e barra móvel de checkout
